@@ -1,3 +1,4 @@
+@import "src/scss/templates";
 .header-container {
     width: 100%;
     display: flex;
@@ -5,6 +6,7 @@
     justify-content: flex-end;
     margin-bottom: 3%;
     .header-text {
+        color: $font-color-light;
         font-size: 1rem;
     }
 }

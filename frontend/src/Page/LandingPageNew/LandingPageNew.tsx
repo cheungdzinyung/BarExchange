@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "./css/bootstrap.min.css";
+// import "./css/bootstrap.min.css";
 import "./css/owl.carousel.min.css";
 import "./css/style.scss";
 import "./css/themify-icons.css";
