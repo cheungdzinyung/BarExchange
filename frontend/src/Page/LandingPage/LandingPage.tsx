@@ -1,6 +1,7 @@
 import * as React from "react";
 
 // import "font-awesome/css/font-awesome.css";
+import "./LandingPage.scss";
 
 import { FooterComponent } from "./FooterComponent/FooterComponent";
 import { SocialComponent } from "./SocialComponent/SocialComponent";
@@ -10,7 +11,10 @@ import { DiscoverComponent } from "./DiscoverComponent/DiscoverComponent";
 import { HeroComponent } from "./HeroComponent/HeroComponent";
 // import NavBarComponent from "src/Components/container/homepage/NavBarComponent/NavBarComponent";
 
-export default class LandingPage extends React.Component<{}, { navBarShrink: string }> {
+export default class LandingPage extends React.Component<
+  {},
+  { navBarShrink: string }
+> {
   constructor(props: { navBarShrink: string }) {
     super(props);
     this.state = { navBarShrink: "" };

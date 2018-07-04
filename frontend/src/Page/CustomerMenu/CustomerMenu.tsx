@@ -187,7 +187,7 @@ export class PureMenu extends React.Component<IMenuProps, IMenuState> {
 
     return (
       <div className="page-content-container">
-        <PageHeader header={"Menu"} subHeader={"Column A, or try column B"} />
+        <PageHeader header={"Menu"} subHeader={"Explore the art of stock-picking"} />
 
         <Slider {...sliderOneSettings} className="menu-display">
           {this.props.categories.map((cat: string) => {

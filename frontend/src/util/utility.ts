@@ -33,21 +33,21 @@ export const switchUp = (
   data: IConsumpGraphDataDeceiveAll
 ): IConsumptionGraphData[] => {
   // get everything from all
-  let newArray: IConsumptionGraphData[];
-  let cleanAll: IConsumptionGraphDataReceiveFromServerOneCat[];
+  let allArray: IConsumptionGraphData[];
+  // let cleanAll: IConsumptionGraphDataReceiveFromServerOneCat[];
   let cleanUser: IConsumptionGraphDataReceiveFromServerOneCat[];
 
   // Restricting the length of the return chart
-  if (data.all.length > 6) {
-    cleanAll = data.all.slice(0, 6);
+  if (data.user.length > 6) {
+    // cleanAll = data.all.slice(0, 6);
     cleanUser = data.user.slice(0, 6);
   } else {
-    cleanAll = data.all;
+    // cleanAll = data.all;
     cleanUser = data.user;
   }
 
   // Start sorting from all
-  newArray = cleanAll.map((single, index) => ({
+  allArray = data.all.map((single, index) => ({
     category: single.category,
     everyone: parseInt(single.price, 10),
     maxPrice: parseInt(single.max, 10),
@@ -55,12 +55,27 @@ export const switchUp = (
   }));
 
   // Fill in data from user
-  cleanUser.forEach((single, index) => {
-    const indicator = newArray.findIndex(
+  const newArr = cleanUser.map((single, index) => {
+    const indicator = allArray.findIndex(
       eachArray => eachArray.category === single.category
     );
-    Object.assign(newArray[indicator], { you: parseInt(single.price, 10) });
+    return { ...allArray[indicator], you: parseInt(single.price, 10) };
   });
 
-  return newArray;
+  // empty arr at start of day so need to check for undefined
+  const max = (typeof(data.all[0]) !== "undefined") ? parseFloat(data.all[0].max) : 5;
+  //  fake data for new user
+  if (newArr.length < 6) {
+    const times = 6 - newArr.length;
+    for (let i = 0; i < times; i++) {
+      newArr.push({
+        category: `${i}`,
+        everyone: max,
+        maxPrice: max,
+        you: 0
+      });
+    }
+  }
+
+  return newArr;
 };

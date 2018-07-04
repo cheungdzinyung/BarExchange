@@ -101,7 +101,7 @@ class PureOrderList extends React.Component<IOrdersProps, {}> {
                     Total Amount: ${indOrd.orderItems.reduce((accu: number, curr: any) => (accu + parseFloat(curr.purchasePrice)), 0).toFixed(2)}
                   </p>
                   <p className="order-time">
-                    Ordering time: {indOrd.orderingTime}
+                    Ordering time: {(new Date(indOrd.orderingTime)).toLocaleDateString("en", {timeZone:"Asia/shanghai", hour:"numeric", minute:"numeric"})}
                   </p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ class PureOrderList extends React.Component<IOrdersProps, {}> {
                   <h3 className="order-number">Order #{indOrd.orders_id}</h3>
                   <p className="order-amount">Total Amount: ${indOrd.orderItems.reduce((accu: number, curr: any) => (accu + parseFloat(curr.purchasePrice)), 0).toFixed(2)}</p>
                   <p className="order-time">
-                    Ordering time: {indOrd.orderingTime}
+                    Ordering time: {(new Date(indOrd.orderingTime)).toLocaleDateString("en", {timeZone:"Asia/shanghai", hour:"numeric", minute:"numeric"})}
                   </p>
                 </div>
                 <img src={checkIcon} className="order-icon" alt="" />

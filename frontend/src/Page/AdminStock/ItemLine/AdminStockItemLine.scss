@@ -12,44 +12,98 @@
     width: 100%;
   }
   .stock-item-info {
-    // height: 100%;
+    height: 100%;
     display: grid;
-    grid-template-rows: 25% 20% 31% 24%;
-    padding: 2% 4%;
+    grid-template-rows: 20% 25% 30% 24%;
+    padding: 2% 4%; // padding-left: 4%;
     .stock-item-category {
       align-self: center;
       font-size: 0.5rem;
       letter-spacing: 0.5px;
     }
-    .stock-item-name-price {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .stock-item-name {
-        color: $admin-item-name-text;
+    // .stock-item-name-price {
+    //   width: 100%;
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   .stock-item-name {
+        
+    //     color: $admin-item-name-text;
+    //   }
+    //   .stock-item-price {
+    //     color: $admin-item-price-text;
+    //   }
+    // }
+    @media screen and (min-width: 768px) {
+      .stock-item-name-price {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .stock-item-name {
+          font-size: 1rem;
+          color: $admin-item-name-text;
+        }
+        .stock-item-price {
+          font-size: 1rem;
+          color: $admin-item-price-text;
+        }
       }
-      .stock-item-price {
-        color: $admin-item-price-text;
+      .stock-item-description {
+        height: 100%;
+        font-size: .5rem;
+        line-height: 1.2;
+        color: $admin-item-description-text;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .stock-item-price-floor {
+        align-self: center;
+        .stock-item-price-floor-text {
+          font-size: 0.6rem;
+          color: #e77070;
+        }
+        .stock-item-price-floor-number {
+          font-size: 0.6rem;
+          margin-left: 3%;
+        }
       }
     }
-    .stock-item-description {
-      @extend %small-text;
-      line-height: 1.2;
-      color: $admin-item-description-text;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    .stock-item-price-floor {
-      align-self: center;
-      .stock-item-price-floor-text {
-        @extend %small-text;
-        color: #e77070;
+    @media screen and (min-width: 1200px) {
+      .stock-item-name-price {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .stock-item-name {
+          font-size: 1.5rem;
+          color: $admin-item-name-text;
+        }
+        .stock-item-price {
+          font-size: 1.5rem;
+          color: $admin-item-price-text;
+        }
       }
-      .stock-item-price-floor-number {
-        @extend %small-text;
-        margin-left: 3%;
+      .stock-item-description {
+        // height: 100%;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: $admin-item-description-text;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .stock-item-price-floor {
+        align-self: center;
+        .stock-item-price-floor-text {
+          font-size: 1rem;
+          color: #e77070;
+        }
+        .stock-item-price-floor-number {
+          font-size: 1rem;
+          margin-left: 3%;
+        }
       }
     }
   }

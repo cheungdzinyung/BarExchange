@@ -9,7 +9,7 @@ import OrderList from "src/Page/CustomerOrder/CustomerOrderListComponent/Custome
 import Performance from "src/Page/CustomerPerformance/CustomerPerformance";
 import Request from "src/Page/CustomerRequest/CustomerRequest";
 import Setting from "src/Page/CustomerSetting/CustomerSetting";
-import PureIntroduction from "src/Page/CustomerWelcomeScreen/introduction";
+import PureIntroduction from "src/Page/CustomerWelcomeScreen/CustomerWelcomeScreen";
 
 
 export default class MobileRoutes extends React.Component {

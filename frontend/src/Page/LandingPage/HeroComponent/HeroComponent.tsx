@@ -1,5 +1,5 @@
 import * as React from "react";
-import './style.css';
+import './style.scss';
 import '../device-mockups/device-mockups.css'
 import demoScreen1 from './demo-screen-1.jpg';
 

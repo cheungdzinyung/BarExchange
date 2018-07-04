@@ -452,7 +452,7 @@ export function getUserConsumptionByUserToken() {
       .get(`${API_SERVER}/api/orders/prices/?dateOfQuery=${year}-${month}-${date}`, config)
       .then((res: any) => {
         if (res.status === 200) {
-          dispatch(getUserConsumptionByUserTokenSuccess(res.data[0]));
+          dispatch(getUserConsumptionByUserTokenSuccess(res.data));
         } else {
           alert("status: " + res.status);
           dispatch(getUserConsumptionByUserTokenFail(""));

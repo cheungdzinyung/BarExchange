@@ -7,10 +7,7 @@ import "./CustomerPerformance.scss";
 // Importing UI elements
 import UserMenu from "src/Components/CustomerAccessMenu/usermenu";
 import PageHeader from "src/Components/CustomerPageHeader/pageheader";
-import {
-  IConsumptionGraphData,
-  IConsumpGraphDataDeceiveAll
-} from "src/modules";
+import {   IConsumpGraphDataDeceiveAll } from "src/modules";
 import UserProfileGraph from "./Graph/CustomerPerformanceGraph";
 
 // Importing fake data
@@ -26,9 +23,9 @@ interface IUserPerformanceProps {
   userConsumptionComparison: IConsumpGraphDataDeceiveAll;
   getConsumption: () => void;
 }
-interface IUserPerformanceState {
-  processedData: IConsumptionGraphData[];
-}
+// interface IUserPerformanceState {
+//   processedData: IConsumptionGraphData[];
+// }
 
 // Redux
 const mapStateToProps = (state: IRootState) => {
@@ -45,16 +42,17 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
-class PurePerformance extends React.Component<
-  IUserPerformanceProps,
-  IUserPerformanceState
-  > {
+class PurePerformance extends React.Component<IUserPerformanceProps, {}> {
   constructor(props: IUserPerformanceProps) {
     super(props);
     this.props.getConsumption();
-    this.state = {
-      processedData: switchUp(this.props.userConsumptionComparison)
-    };
+    // this.state = {
+    //   processedData: switchUp(this.props.userConsumptionComparison)
+    // };
+  }
+
+  public componentDidMount() {
+    this.props.getConsumption();
   }
 
   public render() {
@@ -65,7 +63,7 @@ class PurePerformance extends React.Component<
           data={switchUp(this.props.userConsumptionComparison)}
         />
         <div className="cardd rd-corner">
-          <p>This is just trying out haha. Thanks for joining us here.</p>
+          <p>Thank you for enjoying our product. We hope to see you again soon.</p>
         </div>
         <UserMenu />
       </div>

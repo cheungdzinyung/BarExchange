@@ -7,12 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Importing styling and static assets
 import "./CustomerWelcomeScreen.scss";
-import menu from "src/Components/assets/images/introduction/menu.png";
-import fullmenu from "src/Components/assets/images/introduction/fullmenu.png";
-import payment from "src/Components/assets/images/introduction/payment.png";
-import expandedItem from "src/Components/assets/images/introduction/expandedItem.png";
-import warning from "src/Components/assets/images/introduction/warning.png";
-import welcome from "src/Components/assets/images/introduction/welcome.png";
+import menu from "./img/menu.png";
+import fullmenu from "./img/fullmenu.png";
+import payment from "./img/payment.png";
+import expandedItem from "./img/expandedItem.png";
+import warning from "./img/warning.png";
+import welcome from "./img/welcome.png";
 
 interface IPureIntroductionProps {
   history: History.History;
